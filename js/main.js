@@ -1,8 +1,11 @@
+clearSound = document.querySelector("#clearSound");
+tickSound = document.querySelector("#tickSound");
+gameoverSound = document.querySelector("#gameoverSound");
+mainSound = document.querySelector("#mainSound");
+
 const startGame = () => {
     popup.style.display = "none";
-    let music = new Audio('../musics/main.mp3');
-    music.play();
-    let tickSound = new Audio("../musics/tick.mp3");
+    mainSound.play();
     tickSound.volume = 0.0;
     tickSound.play();
     
@@ -137,7 +140,6 @@ const startGame = () => {
             clearDisplay.innerHTML = "CLEAR";
             clearDisplay.className = "clear result";
             gameDisplay.appendChild(clearDisplay);
-            let clearSound = new Audio('../musics/clear.mp3');
             clearSound.play();
             setInterval(() => {
                 localStorage.setItem("level", level+1);
@@ -155,13 +157,11 @@ const startGame = () => {
             gameoverDisplay.className = "gameover result"
             gameDisplay.appendChild(gameoverDisplay);
             localStorage.removeItem("level");
-            let gameoverSound = new Audio('../musics/gameover.mp3');
             gameoverSound.play();
             setInterval(() => {
                 window.location.href = 'index.html';
             }, 3000)
         }
-        
     }
 }
     
