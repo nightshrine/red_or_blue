@@ -6,8 +6,6 @@ mainSound = document.querySelector("#mainSound");
 const startGame = () => {
     popup.style.display = "none";
     mainSound.play();
-    tickSound.volume = 0.0;
-    tickSound.play();
     
     // 時間制限
     let time = Math.max(5, 11 - Math.trunc(Math.sqrt(level)));
@@ -109,11 +107,14 @@ const startGame = () => {
     const timeInterval = setInterval(() => {
         time -= 1;
         timeDisplay.innerText = time;
-        if(time < 5) {
-            tickSound.volume += 0.2;
-        }
-        if(time == 0) {
+        if(time == 5) {
             tickSound.volume = 0.0;
+            tickSound.play();
+        } else if (time < 5 && 0 < time) {
+            tickSound.volume += 0.24;
+        } else if (time == 0) {
+            tickSound.volume = 0.0;
+            mainSound.volume = 0.0;
             judge();
             clearInterval(timeInterval);
         }
