@@ -18,7 +18,7 @@ const startGame = () => {
     let gameDisplay = document.querySelector(".game-display");
     
     // blockを生成する。
-    const makeblock = (n) => {
+    const makeRedBlock = (n) => {
         for(let i=0; i<n; i++) {
             let blockDiv = document.createElement("div");
             blockDiv.className = "red-block block";
@@ -35,7 +35,7 @@ const startGame = () => {
     }
     
     // blockの数を決める。
-    makeblock(redNum)
+    makeRedBlock(redNum)
     makeBlueBlock(blueNum)
     
     let block = document.querySelectorAll(".block"); 
