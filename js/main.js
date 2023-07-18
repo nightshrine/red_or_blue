@@ -17,12 +17,12 @@ const startGame = () => {
     
     let gameDisplay = document.querySelector(".game-display");
     
-    // blockを生成する。
+    // redBlockを生成する。
     const makeRedBlock = (n) => {
         for(let i=0; i<n; i++) {
-            let blockDiv = document.createElement("div");
-            blockDiv.className = "red-block block";
-            gameDisplay.appendChild(blockDiv);
+            let redBlockDiv = document.createElement("div");
+            redBlockDiv.className = "red-block block";
+            gameDisplay.appendChild(redBlockDiv);
         }
     }
     // blueBlockを生成する。
@@ -137,10 +137,8 @@ const startGame = () => {
         }
         
         if(select == ANS) {
-            let clearDisplay = document.createElement("p");
-            clearDisplay.innerHTML = "CLEAR";
-            clearDisplay.className = "clear result";
-            gameDisplay.appendChild(clearDisplay);
+            let clearDisplay = document.querySelector(".clear")
+            clearDisplay.style.display = "block";
             clearSound.play();
             setInterval(() => {
                 localStorage.setItem("level", level+1);
@@ -153,10 +151,8 @@ const startGame = () => {
                 window.location.reload();
             }, 3000)
         } else {
-            let gameoverDisplay = document.createElement("p");
-            gameoverDisplay.innerHTML = "GAME OVER"
-            gameoverDisplay.className = "gameover result"
-            gameDisplay.appendChild(gameoverDisplay);
+            let gameoverDisplay = document.querySelector(".gameover")
+            gameoverDisplay.style.display = "block";
             localStorage.removeItem("level");
             gameoverSound.play();
             setInterval(() => {

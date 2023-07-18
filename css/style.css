@@ -105,9 +105,11 @@ html, body {
     margin-top: 250px;
 }
 .gameover {
+    display: none;
     color: #8300e1;
 }
 .clear {
+    display: none;
     color: #f4ee44;
 }
 
