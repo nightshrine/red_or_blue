@@ -11,13 +11,11 @@ if(localStorage.getItem("level")) {
             window.location.href = 'game.html';
         })
     }
-}else {
-    localStorage.setItem("level", 1);
 }
 
 let startButtonNew = document.querySelector(".new");
 startButtonNew.addEventListener("click", () => {
-    localStorage.setItem("level", 1);
+    localStorage.setItem("level", 1); 
     window.location.href = 'game.html';
 })
 
