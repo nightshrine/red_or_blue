@@ -164,7 +164,7 @@ const startGame = () => {
     
     
     
-    // レベル
+// レベル
 let level = Number(localStorage.getItem("level"));
 
 //音楽を再生させるために一旦ユーザーから反応をもらう。
